@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title><%= typeof title != 'undefined' ? title : 'Corredora Aburto Propiedades' %></title>
+        <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="/static/css/tailwind.output.css" />
+        <link rel="stylesheet" href="/static/css/app.css">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css" rel="stylesheet" />
+
+        <% if (typeof style != 'undefined') { %> <%- style %> <% } %>
+    </head>
+
+    <body class="flex flex-col min-h-screen bg-gray-50 relative">
+        
+        <%- include("../partials/header.ejs") %>
+
+        <main class="flex-grow">
+            <%- body %>
+        </main>
+
+        <%- include("../partials/footer.ejs") %>
+
+        <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 w-full max-w-sm">
+            
+            <% if (typeof error != 'undefined' && error.length > 0) { %>
+                <div id="toast-error" class="flex items-center w-full p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 border-l-4 border-red-500" role="alert">
+                    <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <div class="ml-3 text-sm font-normal"><%= error %></div>
+                    <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-error" aria-label="Close">
+                        <span class="sr-only">Cerrar</span>
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            <% } %>
+
+            <% if (typeof success != 'undefined' && success.length > 0) { %>
+                <div id="toast-success" class="flex items-center w-full p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 border-l-4 border-green-500" role="alert">
+                    <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div class="ml-3 text-sm font-normal"><%= success %></div>
+                    <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-success" aria-label="Close">
+                        <span class="sr-only">Cerrar</span>
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            <% } %>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script>
+        
+        <script>
+            setTimeout(() => {
+                const errorToast = document.getElementById('toast-error');
+                const successToast = document.getElementById('toast-success');
+                if(errorToast) errorToast.style.display = 'none';
+                if(successToast) successToast.style.display = 'none';
+            }, 5000); // 5000ms = 5 segundos
+        </script>
+
+        <% if (typeof script != 'undefined') { %> <%- script %> <% } %>
+    </body>
+</html>

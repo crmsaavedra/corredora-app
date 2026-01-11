@@ -1,0 +1,209 @@
+<link rel="stylesheet" href="/static/css/landing.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+<header class="hero">
+    <div class="textos-hero">
+        <h1>Aburto Propiedades</h1>
+        <h2 class="text-3xl">Corredor de propiedades</h2> <h2 class="text-2xl">Asesoría legal inmobiliaria</h2>
+        <a href="#footer" class="mt-5">Contáctanos</a>
+    </div>
+    <div class="svg-hero" style="height: 150px; overflow: hidden;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path>
+        </svg>
+    </div>
+</header>
+
+<main>
+    <section class="">
+        <div class="contenedor">
+            <h2 class="titulo"><a name="portafolio"><i class="fa-solid fa-building mr-2"></i>Propiedades destacadas</a></h2>
+            <div class="galeria-port" id="galeria-port"></div>
+        </div>
+    </section>
+
+    <div class="container-plus" >
+        <h2 class="text-center text-2xl text-bold mt-5" style="color:#44732a;"><i class="fa-solid fa-house mr-2"></i>Tenemos interesantes propiedades al alcance de tu mano</h2>
+        <div class="container" id="propiedades"></div>
+    </div>
+</main> <style>
+    .container-plus{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+        flex-direction: column;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 15px;
+        max-width: 1000px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card {
+        width: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        background-color: white;
+        display: flex; /* Asegura estructura vertical */
+        flex-direction: column;
+    }
+
+    /* Contenedor de imagen para mantener tamaño uniforme */
+    .card-image-container {
+        width: 100%;
+        height: 200px; /* Altura fija para evitar saltos */
+        overflow: hidden;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* La imagen cubre el área sin deformarse */
+    }
+
+    .badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        padding: 5px 10px;
+        font-weight: bold;
+        border-radius: 5px;
+        z-index: 10;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 10px;
+    }
+
+    .location {
+        display: flex;
+        align-items: center;
+        color: #555;
+        font-size: 14px;
+    }
+
+    .location::before {
+        content: '\1F4CD';
+        margin-right: 5px;
+    }
+</style>
+
+<script>
+    // FIX 1: Inicialización segura. Si el backend no envía la variable, usa un array vacío.
+    // El || [] previene errores de "undefined" en JSON.stringify
+    let aleatorios = <%- JSON.stringify(typeof aleatorios !== 'undefined' ? aleatorios : []) %>;
+    let propiedades = <%- JSON.stringify(typeof propiedades !== 'undefined' ? propiedades : []) %>;
+
+    let galeria_port = document.getElementById("galeria-port");
+    let propiedades_item = document.getElementById("propiedades");
+
+    galeria_port.innerHTML = "";
+    propiedades_item.innerHTML = "";
+
+    // Función unificada para generar HTML de tarjeta (Evita duplicar código y errores)
+    function crearTarjeta(item) {
+        // FIX 2: Validación de datos nulos con Optional Chaining (?.)
+        const detalles = item.detalles || {};
+        const estado = detalles.estado || '';
+        const tipo_acuerdo = detalles.tipo_acuerdo || '';
+        
+        let disponible = true;
+        if (estado === "ARRENDADO" || estado === "VENDIDO") {
+            disponible = false;
+        }
+
+        let color = "bg-green-500";
+        let msg = tipo_acuerdo;
+        
+        if (!disponible) {
+            color = "bg-red-500";
+            msg = estado;
+        }
+
+        // Formateo de precio
+        let priceFormatted = "";
+        try {
+            if(item.tipo_moneda === "UF"){
+                const formatter = new Intl.NumberFormat('es-CL', {
+                    style: 'currency',
+                    currency: "CLP",
+                    trailingZeroDisplay: 'stripIfInteger'
+                });
+                priceFormatted = formatter.format(item.price).replace("$", "") + " UF";
+            } else {
+                const currency = item.tipo_moneda || 'CLP'; // Fallback a CLP
+                const formatter = new Intl.NumberFormat('es-CL', {
+                    style: 'currency',
+                    currency: currency,
+                    trailingZeroDisplay: 'stripIfInteger'
+                });
+                priceFormatted = formatter.format(item.price);
+            }
+        } catch (e) {
+            console.error("Error formateando precio", e);
+            priceFormatted = item.price; // Fallback sin formato
+        }
+
+        // FIX 3: Manejo seguro de imágenes
+        let imagenSrc = "https://via.placeholder.com/300x200?text=No+Image"; // Imagen por defecto
+        if (item.fotos && item.fotos.length > 0 && item.fotos[0]) {
+            // Manejamos el replace de forma segura
+            imagenSrc = item.fotos[0].replace("./public", "/static");
+        }
+
+        return `
+            <a href="/propiedad/${item._id}" class="card mx-4 my-2" id="carta_${item._id}">
+                <div class="card-image-container">
+                    <img src="${imagenSrc}" alt="${item.nombre || 'Propiedad'}">
+                </div>
+                <div class="badge ${color}">${msg}</div>
+                <div class="card-content">
+                    <div class="title">${item.nombre || 'Sin título'}</div>
+                    <div class="price">${priceFormatted}</div>
+                    <div class="location">
+                        ${item.comuna || ''}, ${item.provincia || ''}, ${item.region || ''}
+                    </div>
+                </div>
+            </a>
+        `;
+    }
+
+    // Renderizar Aleatorios
+    if (Array.isArray(aleatorios)) {
+        aleatorios.forEach(propiedad => {
+            galeria_port.innerHTML += crearTarjeta(propiedad);
+        });
+    }
+
+    // Renderizar Propiedades Generales
+    if (Array.isArray(propiedades)) {
+        propiedades.forEach(propiedad => {
+            propiedades_item.innerHTML += crearTarjeta(propiedad);
+        });
+    }
+
+    console.log("Datos cargados:", { aleatorios: aleatorios.length, propiedades: propiedades.length });
+</script>

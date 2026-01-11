@@ -1,0 +1,2577 @@
+{
+	"regiones": [{
+			"region": {
+				"nombre": "XV: ARICA Y PARINACOTA",
+				"capital": "ARICA",
+				"provincias": [{
+						"provincia": {
+							"nombre": "ARICA",
+							"capital": "ARICA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "ARICA",
+										"códigoTelefónico": "58"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CAMARONES",
+										"códigoTelefónico": "58"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "PARINACOTA",
+							"capital": "PUTRE",
+							"comunas": [{
+								"comuna": {
+									"nombre": "PUTRE",
+									"códigoTelefónico": "58"
+								}
+							}, {
+								"comuna": {
+									"nombre": "GENERAL LAGOS",
+									"códigoTelefónico": "58"
+								}
+							}]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "I: TARAPACÁ",
+				"capital": "IQUIQUE",
+				"provincias": [{
+						"provincia": {
+							"nombre": "IQUIQUE",
+							"capital": "IQUIQUE",
+							"comunas": [{
+									"comuna": {
+										"nombre": "IQUIQUE",
+										"códigoTelefónico": "57"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ALTO HOSPICIO",
+										"códigoTelefónico": "57"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "TAMARUGAL",
+							"capital": "POZO ALMONTE",
+							"comunas": [{
+									"comuna": {
+										"nombre": "POZO ALMONTE",
+										"códigoTelefónico": "57"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CAMIÑA",
+										"códigoTelefónico": "57"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "COLCHANE",
+										"códigoTelefónico": "57"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "HUARA",
+										"códigoTelefónico": "57"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PICA",
+										"códigoTelefónico": "57"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "II: ANTOFAGASTA",
+				"capital": "ANTOFAGASTA",
+				"provincias": [{
+						"provincia": {
+							"nombre": "ANTOFAGASTA",
+							"capital": "ANTOFAGASTA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "ANTOFAGASTA",
+										"códigoTelefónico": "55"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MEJILLONES",
+										"códigoTelefónico": "55"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SIERRA GORDA",
+										"códigoTelefónico": "55"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TALTAL",
+										"códigoTelefónico": "55"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "EL LOA",
+							"capital": "CALAMA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "CALAMA",
+										"códigoTelefónico": "55"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "OLLAGüE",
+										"códigoTelefónico": "55"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN PEDRO DE ATACAMA",
+										"códigoTelefónico": "55"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "TOCOPILLA",
+							"capital": "TOCOPILLA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "TOCOPILLA",
+										"códigoTelefónico": "55"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MARÍA ELENA",
+										"códigoTelefónico": "55"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "III: ATACAMA",
+				"capital": "COPIAPÓ",
+				"provincias": [{
+						"provincia": {
+							"nombre": "CHAÑARAL",
+							"capital": "CHAÑARAL",
+							"comunas": [{
+									"comuna": {
+										"nombre": "CHAÑARAL",
+										"códigoTelefónico": "52"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "DIEGO DE ALMAGRO",
+										"códigoTelefónico": "52"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "COPIAPÓ",
+							"capital": "COPIAPÓ",
+							"comunas": [{
+									"comuna": {
+										"nombre": "COPIAPÓ",
+										"códigoTelefónico": "52"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CALDERA",
+										"códigoTelefónico": "52"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TIERRA AMARILLA",
+										"códigoTelefónico": "52"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "HUASCO",
+							"capital": "VALLENAR",
+							"comunas": [{
+									"comuna": {
+										"nombre": "VALLENAR",
+										"códigoTelefónico": "52"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ALTO DEL CARMEN",
+										"códigoTelefónico": "52"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "FREIRINA",
+										"códigoTelefónico": "52"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "HUASCO",
+										"códigoTelefónico": "52"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "IV: COQUIMBO",
+				"capital": "LA SERENA",
+				"provincias": [{
+						"provincia": {
+							"nombre": "CHOAPA",
+							"capital": "ILLAPEL",
+							"comunas": [{
+									"comuna": {
+										"nombre": "ILLAPEL",
+										"códigoTelefónico": "53"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CANELA",
+										"códigoTelefónico": "53"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LOS VILOS",
+										"códigoTelefónico": "53"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SALAMANCA",
+										"códigoTelefónico": "53"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "ELQUI",
+							"capital": "COQUIMBO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "LA SERENA",
+										"códigoTelefónico": "51"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "COQUIMBO",
+										"códigoTelefónico": "51"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ANDACOLLO",
+										"códigoTelefónico": "51"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LA HIGUERA",
+										"códigoTelefónico": "51"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PAIHUANO",
+										"códigoTelefónico": "51"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "VICUÑA",
+										"códigoTelefónico": "51"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "LIMARÍ",
+							"capital": "OVALLE",
+							"comunas": [{
+									"comuna": {
+										"nombre": "OVALLE",
+										"códigoTelefónico": "53"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "COMBARBALÁ",
+										"códigoTelefónico": "53"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MONTE PATRIA",
+										"códigoTelefónico": "53"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUNITAQUI",
+										"códigoTelefónico": "53"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RÍO HURTADO",
+										"códigoTelefónico": "53"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "V: VALPARAÍSO",
+				"capital": "VALPARAÍSO",
+				"provincias": [{
+						"provincia": {
+							"nombre": "ISLA DE PASCUA",
+							"capital": "HANGA ROA",
+							"comunas": [{
+								"comuna": {
+									"nombre": "ISLA DE PASCUA",
+									"códigoTelefónico": "32"
+								}
+							}]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "LOS ANDES",
+							"capital": "LOS ANDES",
+							"comunas": [{
+									"comuna": {
+										"nombre": "LOS ANDES",
+										"códigoTelefónico": "34"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CALLE LARGA",
+										"códigoTelefónico": "34"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RINCONADA DE LOS ANDES",
+										"códigoTelefónico": "34"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN ESTEBAN",
+										"códigoTelefónico": "34"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "MARGA MARGA",
+							"capital": "QUILPUÉ",
+							"comunas": [{
+									"comuna": {
+										"nombre": "QUILPUÉ",
+										"códigoTelefónico": "32"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LIMACHE",
+										"códigoTelefónico": "33"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "OLMUÉ",
+										"códigoTelefónico": "33"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "VILLA ALEMANA",
+										"códigoTelefónico": "32"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "PETORCA",
+							"capital": "LA LIGUA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "LA LIGUA",
+										"códigoTelefónico": "33"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CABILDO",
+										"códigoTelefónico": "33"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PAPUDO",
+										"códigoTelefónico": "33"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PETORCA",
+										"códigoTelefónico": "33"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ZAPALLAR",
+										"códigoTelefónico": "33"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "QUILLOTA",
+							"capital": "QUILLOTA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "QUILLOTA",
+										"códigoTelefónico": "33"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LA CALERA",
+										"códigoTelefónico": "33"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "HIJUELAS",
+										"códigoTelefónico": "33"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LA CRUZ",
+										"códigoTelefónico": "33"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "NOGALES",
+										"códigoTelefónico": "33"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "SAN ANTONIO",
+							"capital": "SAN ANTONIO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "SAN ANTONIO",
+										"códigoTelefónico": "35"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ALGARROBO",
+										"códigoTelefónico": "35"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CARTAGENA",
+										"códigoTelefónico": "35"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "EL QUISCO",
+										"códigoTelefónico": "35"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "EL TABO",
+										"códigoTelefónico": "35"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SANTO DOMINGO",
+										"códigoTelefónico": "35"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "SAN FELIPE DE ACONCAGUA",
+							"capital": "SAN FELIPE",
+							"comunas": [{
+									"comuna": {
+										"nombre": "SAN FELIPE",
+										"códigoTelefónico": "34"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CATEMU",
+										"códigoTelefónico": "34"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LLAILLAY",
+										"códigoTelefónico": "34"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PANQUEHUE",
+										"códigoTelefónico": "34"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUTAENDO",
+										"códigoTelefónico": "34"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SANTA MARÍA",
+										"códigoTelefónico": "34"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "VALPARAÍSO",
+							"capital": "VALPARAÍSO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "VALPARAÍSO",
+										"códigoTelefónico": "32"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CASABLANCA",
+										"códigoTelefónico": "32"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CONCÓN",
+										"códigoTelefónico": "32"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "JUAN FERNÁNDEZ",
+										"códigoTelefónico": "32"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUCHUNCAVÍ",
+										"códigoTelefónico": "32"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUINTERO",
+										"códigoTelefónico": "32"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "VIÑA DEL MAR",
+										"códigoTelefónico": "32"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "RM: METROPOLITANA DE SANTIAGO",
+				"capital": "SANTIAGO",
+				"provincias": [{
+						"provincia": {
+							"nombre": "CHACABUCO",
+							"capital": "COLINA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "COLINA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LAMPA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TIL TIL",
+										"códigoTelefónico": "2"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "CORDILLERA",
+							"capital": "PUENTE ALTO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "PIRQUE",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN JOSÉ DE MAIPO",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUENTE ALTO",
+										"códigoTelefónico": "2"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "MAIPO",
+							"capital": "SAN BERNARDO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "SAN BERNARDO",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "BUIN",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CALERA DE TANGO",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PAINE",
+										"códigoTelefónico": "2"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "MELIPILLA",
+							"capital": "MELIPILLA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "MELIPILLA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ALHUÉ",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CURACAVÍ",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MARÍA PINTO",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN PEDRO",
+										"códigoTelefónico": "2"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "SANTIAGO",
+							"capital": "SANTIAGO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "SANTIAGO",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CERRILLOS",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CERRO NAVIA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CONCHALÍ",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "EL BOSQUE",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ESTACIÓN CENTRAL",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "HUECHURABA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "INDEPENDENCIA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LA CISTERNA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LA FLORIDA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LA GRANJA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LA PINTANA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LA REINA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LAS CONDES",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LO BARNECHEA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LO ESPEJO",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LO PRADO",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MACUL",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MAIPÚ",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ÑUÑOA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PEDRO AGUIRRE CERDA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PEÑALOLÉN",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PROVIDENCIA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUDAHUEL",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUILICURA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUINTA NORMAL",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RECOLETA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RENCA",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN JOAQUÍN",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN MIGUEL",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN RAMÓN",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "VITACURA",
+										"códigoTelefónico": "2"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "TALAGANTE",
+							"capital": "TALAGANTE",
+							"comunas": [{
+									"comuna": {
+										"nombre": "EL MONTE",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ISLA DE MAIPO",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PADRE HURTADO",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PEÑAFLOR",
+										"códigoTelefónico": "2"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TALAGANTE",
+										"códigoTelefónico": "2"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "VI: LIBERTADOR GENERAL BERNARDO O'HIGGINS",
+				"capital": "RANCAGUA",
+				"provincias": [{
+						"provincia": {
+							"nombre": "CACHAPOAL",
+							"capital": "RANCAGUA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "RANCAGUA",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CODEGUA",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "COINCO",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "COLTAUCO",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "DOÑIHUE",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "GRANEROS",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LAS CABRAS",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MACHALÍ",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MALLOA",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MOSTAZAL",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "OLIVAR",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PEUMO",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PICHIDEGUA",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUINTA DE TILCOCO",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RENGO",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "REQUÍNOA",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN VICENTE",
+										"códigoTelefónico": "72"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "CARDENAL CARO",
+							"capital": "PICHILEMU",
+							"comunas": [{
+									"comuna": {
+										"nombre": "PICHILEMU",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LA ESTRELLA",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LITUECHE",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MARCHIHUE",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "NAVIDAD",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PAREDONES",
+										"códigoTelefónico": "72"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "COLCHAGUA",
+							"capital": "SAN FERNANDO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "SAN FERNANDO",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CHÉPICA",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CHIMBARONGO",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LOLOL",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "NANCAGUA",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PALMILLA",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PERALILLO",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PLACILLA",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUMANQUE",
+										"códigoTelefónico": "72"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SANTA CRUZ",
+										"códigoTelefónico": "72"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "VII: MAULE",
+				"capital": "TALCA",
+				"provincias": [{
+						"provincia": {
+							"nombre": "CAUQUENES",
+							"capital": "CAUQUENES",
+							"comunas": [{
+									"comuna": {
+										"nombre": "CAUQUENES",
+										"códigoTelefónico": "73"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CHANCO",
+										"códigoTelefónico": "73"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PELLUHUE",
+										"códigoTelefónico": "73"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "CURICÓ",
+							"capital": "CURICÓ",
+							"comunas": [{
+									"comuna": {
+										"nombre": "CURICÓ",
+										"códigoTelefónico": "75"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "HUALAÑÉ",
+										"códigoTelefónico": "75"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LICANTÉN",
+										"códigoTelefónico": "75"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MOLINA",
+										"códigoTelefónico": "75"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RAUCO",
+										"códigoTelefónico": "75"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ROMERAL",
+										"códigoTelefónico": "75"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAGRADA FAMILIA",
+										"códigoTelefónico": "75"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TENO",
+										"códigoTelefónico": "75"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "VICHUQUÉN",
+										"códigoTelefónico": "75"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "LINARES",
+							"capital": "LINARES",
+							"comunas": [{
+									"comuna": {
+										"nombre": "LINARES",
+										"códigoTelefónico": "73"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "COLBÚN",
+										"códigoTelefónico": "73"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LONGAVÍ",
+										"códigoTelefónico": "73"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PARRAL",
+										"códigoTelefónico": "73"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RETIRO",
+										"códigoTelefónico": "73"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN JAVIER DE LONCOMILLA",
+										"códigoTelefónico": "73"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "VILLA ALEGRE",
+										"códigoTelefónico": "73"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "YERBAS BUENAS",
+										"códigoTelefónico": "73"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "TALCA",
+							"capital": "TALCA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "TALCA",
+										"códigoTelefónico": "71"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CONSTITUCIÓN",
+										"códigoTelefónico": "71"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CUREPTO",
+										"códigoTelefónico": "71"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "EMPEDRADO",
+										"códigoTelefónico": "71"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MAULE",
+										"códigoTelefónico": "71"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PELARCO",
+										"códigoTelefónico": "71"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RÍO CLARO",
+										"códigoTelefónico": "71"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN CLEMENTE",
+										"códigoTelefónico": "71"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN RAFAEL",
+										"códigoTelefónico": "71"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "XVI: ÑUBLE",
+				"capital": "CHILLÁN",
+				"provincias": [{
+						"provincia": {
+							"nombre": "ITATA",
+							"capital": "QUIRIHUE",
+							"comunas": [
+								{
+									"comuna": {
+										"nombre": "COBQUECURA",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "COELEMU",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "NINHUE",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PORTEZUELO",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUIRIHUE",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RÁNQUIL",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TREGUACO",
+										"códigoTelefónico": "42"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "DIGUILLÍN",
+							"capital": "BULNES",
+							"comunas": [
+								{
+									"comuna": {
+										"nombre": "BULNES",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CHILLÁN VIEJO",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CHILLÁN",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "EL CARMEN",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PEMUCO",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PINTO",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUILLÓN",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN IGNACIO",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "YUNGAY",
+										"códigoTelefónico": "42"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "PUNILLA",
+							"capital": "SAN CARLOS",
+							"comunas": [
+								{
+									"comuna": {
+										"nombre": "COIHUECO",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ÑIQUÉN",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN CARLOS",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN FABIÁN",
+										"códigoTelefónico": "42"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN NICOLÁS",
+										"códigoTelefónico": "42"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "VIII: BIOBÍO",
+				"capital": "CONCEPCIÓN",
+				"provincias": [{
+						"provincia": {
+							"nombre": "ARAUCO",
+							"capital": "LEBU",
+							"comunas": [{
+									"comuna": {
+										"nombre": "LEBU",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ARAUCO",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CAÑETE",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CONTULMO",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CURALINAHUE",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LOS ÁLAMOS",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TIRÚA",
+										"códigoTelefónico": "41"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "BIOBÍO",
+							"capital": "LOS ÁNGELES",
+							"comunas": [{
+									"comuna": {
+										"nombre": "LOS ÁNGELES",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ANTUCO",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CABRERO",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LAJA",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MULCHÉN",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "NACIMIENTO",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "NEGRETE",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUILACO",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUILLECO",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN ROSENDO",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SANTA BÁRBARA",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TUCAPEL",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "YUMBEL",
+										"códigoTelefónico": "43"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ALTO BIOBÍO",
+										"códigoTelefónico": "43"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "CONCEPCIÓN",
+							"capital": "CONCEPCIÓN",
+							"comunas": [{
+									"comuna": {
+										"nombre": "CONCEPCIÓN",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CORONEL",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CHIGUAYANTE",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "FLORIDA",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "HUALQUI",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LOTA",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PENCO",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN PEDRO DE LA PAZ",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SANTA JUANA",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TALCAHUANO",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TOMÉ",
+										"códigoTelefónico": "41"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "HUALPÉN",
+										"códigoTelefónico": "41"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "IX: ARAUCANÍA",
+				"capital": "TEMUCO",
+				"provincias": [{
+						"provincia": {
+							"nombre": "CAUTÍN",
+							"capital": "TEMUCO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "TEMUCO",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CARAHUE",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CUNCO",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CURARREHUE",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "FREIRE",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "GALVARINO",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "GORBEA",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LAUTARO",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LONCOCHE",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MELIPEUCO",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "NUEVA IMPERIAL",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PADRE LAS CASAS",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PERQUENCO",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PITRUFQUÉN",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUCÓN",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAAVEDRA",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TEODORO SCHMIDT",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TOLTÉN",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "VILCÚN",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "VILLARRICA",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CHOLCHOL",
+										"códigoTelefónico": "45"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "MALLECO",
+							"capital": "ANGOL",
+							"comunas": [{
+									"comuna": {
+										"nombre": "ANGOL",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "COLLIPULLI",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CURACAUTÍN",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ERCILLA",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LONQUIMAY",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LOS SAUCES",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LUMACO",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PURÉN",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RENAICO",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TRAIGUÉN",
+										"códigoTelefónico": "45"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "VICTORIA",
+										"códigoTelefónico": "45"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "XIV: LOS RÍOS",
+				"capital": "VALDIVIA",
+				"provincias": [{
+						"provincia": {
+							"nombre": "RANCO",
+							"capital": "LA UNIÓN",
+							"comunas": [{
+									"comuna": {
+										"nombre": "LA UNIÓN",
+										"códigoTelefónico": "63"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LA FUTRONO",
+										"códigoTelefónico": "63"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LAGO RANCO",
+										"códigoTelefónico": "63"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RÍO BUENO",
+										"códigoTelefónico": "63"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "VALDIVIA",
+							"capital": "VALDIVIA",
+							"comunas": [{
+									"comuna": {
+										"nombre": "VALDIVIA",
+										"códigoTelefónico": "63"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CORRAL",
+										"códigoTelefónico": "63"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LANCO",
+										"códigoTelefónico": "63"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LOS LAGOS",
+										"códigoTelefónico": "63"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MÁFIL",
+										"códigoTelefónico": "63"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MARIQUINA",
+										"códigoTelefónico": "63"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PAILLACO",
+										"códigoTelefónico": "63"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PANGUIPULLI",
+										"códigoTelefónico": "63"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "X: LOS LAGOS",
+				"capital": "PUERTO MONTT",
+				"provincias": [{
+						"provincia": {
+							"nombre": "CHILOÉ",
+							"capital": "CASTRO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "CASTRO",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ANCUD",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CHONCHI",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CURACO DE VÉLEZ",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "DALCAHUE",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUQUELDÓN",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUEILÉN",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUELLÓN",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUEMCHI",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "QUINCHAO",
+										"códigoTelefónico": "65"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "LLANQUIHUE",
+							"capital": "PUERTO MONTT",
+							"comunas": [{
+									"comuna": {
+										"nombre": "PUERTO MONTT",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CALBUCO",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "COCHAMÓ",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "FRESIA",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "FRUTILLAR",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LOS MUERMOS",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LLANQUIHUE",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "MAULLÍN",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUERTO VARAS",
+										"códigoTelefónico": "65"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "OSORNO",
+							"capital": "OSORNO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "OSORNO",
+										"códigoTelefónico": "64"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUERTO OCTAY",
+										"códigoTelefónico": "64"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PURRANQUE",
+										"códigoTelefónico": "64"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PUYEHUE",
+										"códigoTelefónico": "64"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RÍO NEGRO",
+										"códigoTelefónico": "64"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN JUAN DE LA COSTA",
+										"códigoTelefónico": "64"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN PABLO",
+										"códigoTelefónico": "64"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "PALENA",
+							"capital": "CHAITÉN",
+							"comunas": [{
+									"comuna": {
+										"nombre": "CHAITÉN",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "FUTALEUFÚ",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "HUALAIHUÉ",
+										"códigoTelefónico": "65"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PALENA",
+										"códigoTelefónico": "65"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "XI: AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+				"capital": "COYHAIQUE",
+				"provincias": [{
+						"provincia": {
+							"nombre": "AYSÉN",
+							"capital": "PUERTO AYSÉN",
+							"comunas": [{
+									"comuna": {
+										"nombre": "AYSÉN",
+										"códigoTelefónico": "67"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "CISNES",
+										"códigoTelefónico": "67"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "GUAITECAS",
+										"códigoTelefónico": "67"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "CAPITÁN PRAT",
+							"capital": "COCHRANE",
+							"comunas": [{
+									"comuna": {
+										"nombre": "COCHRANE",
+										"códigoTelefónico": "67"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "O'HIGGINS",
+										"códigoTelefónico": "67"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TORTEL",
+										"códigoTelefónico": "67"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "COYHAIQUE",
+							"capital": "COYHAIQUE",
+							"comunas": [{
+									"comuna": {
+										"nombre": "COYHAIQUE",
+										"códigoTelefónico": "67"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LAGO VERDE",
+										"códigoTelefónico": "67"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "GENERAL CARRERA",
+							"capital": "CHILE CHICO",
+							"comunas": [{
+									"comuna": {
+										"nombre": "CHILE CHICO",
+										"códigoTelefónico": "67"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RÍO IBAÑEZ",
+										"códigoTelefónico": "67"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"region": {
+				"nombre": "XII: MAGALLANES",
+				"capital": "PUNTA ARENAS",
+				"provincias": [{
+						"provincia": {
+							"nombre": "ANTÁRTICA CHILENA",
+							"capital": "PUERTO WILLIAMS",
+							"comunas": [{
+									"comuna": {
+										"nombre": "CABO DE HORNOS",
+										"códigoTelefónico": "61"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "ANTÁRTICA",
+										"códigoTelefónico": "61"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "MAGALLANES",
+							"capital": "PUERTO ARENAS",
+							"comunas": [{
+									"comuna": {
+										"nombre": "PUNTA ARENAS",
+										"códigoTelefónico": "61"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "LAGUNA BLANCA",
+										"códigoTelefónico": "61"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "RÍO VERDE",
+										"códigoTelefónico": "61"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "SAN GREGORIO",
+										"códigoTelefónico": "61"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "TIERRA DEL FUEGO",
+							"capital": "PORVENIR",
+							"comunas": [{
+									"comuna": {
+										"nombre": "PORVENIR",
+										"códigoTelefónico": "61"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "PRIMAVERA",
+										"códigoTelefónico": "61"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TIMAUKEL",
+										"códigoTelefónico": "61"
+									}
+								}
+							]
+						}
+					},
+					{
+						"provincia": {
+							"nombre": "ÚLTIMA ESPERANZA",
+							"capital": "PUERTO NATALES",
+							"comunas": [{
+									"comuna": {
+										"nombre": "NATALES",
+										"códigoTelefónico": "61"
+									}
+								},
+								{
+									"comuna": {
+										"nombre": "TORRES DEL PAINE",
+										"códigoTelefónico": "61"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

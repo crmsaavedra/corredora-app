@@ -1,0 +1,179 @@
+<link rel="stylesheet" href="/static/css/landing.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+<style>
+    .container-plus{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+        flex-direction: column;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 15px;
+        max-width: 1000px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card {
+        width: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        background-color: white;
+        /* Flex para asegurar altura uniforme */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* MEJORA VISUAL: Contenedor fijo para la imagen */
+    .card-image-container {
+        width: 100%;
+        height: 200px; /* Altura fija */
+        background-color: #eee;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
+    }
+
+    .badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        padding: 5px 10px;
+        font-weight: bold;
+        border-radius: 5px;
+        z-index: 10;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 10px;
+    }
+
+    .location {
+        display: flex;
+        align-items: center;
+        color: #555;
+        font-size: 14px;
+    }
+
+    .location::before {
+        content: '\1F4CD';
+        margin-right: 5px;
+    }
+</style>
+
+<header class="hero">
+    <div class="textos-hero">
+        <h1>Aburto Propiedades</h1>
+        <h2 class="text-3xl">Corredor de propiedades</h2> <h2 class="text-2xl">Asesoría legal inmobiliaria</h2>
+        <a href="/admin/crear-propiedad" class="mt-5">Añadir nueva propiedad</a>
+    </div>
+    <div class="svg-hero" style="height: 150px; overflow: hidden;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path>
+        </svg>
+    </div>
+</header>
+<main>
+    <div class="container-plus" >
+        <h2 class="text-center text-2xl text-bold mt-5" style="color:#44732a;"><i class="fa-solid fa-house mr-2"></i>Ver propiedades</h2>
+        <div class="container" id="propiedades"></div>
+    </div>
+</main>
+
+<script>
+    // FIX 1: Inicialización segura (evita crash si el backend no envía la variable)
+    let propiedades = <%- JSON.stringify(typeof propiedades !== 'undefined' ? propiedades : []) %>;
+    let propiedades_item = document.getElementById("propiedades");
+
+    propiedades_item.innerHTML = "";
+
+    // Usamos forEach que es más limpio
+    if(Array.isArray(propiedades)) {
+        propiedades.forEach(propiedad => {
+            
+            // FIX 2: Validación de detalles (evita crash si faltan datos)
+            const detalles = propiedad.detalles || {};
+            const estado = detalles.estado || '';
+            const tipoAcuerdo = detalles.tipo_acuerdo || '';
+
+            let disponible = true;
+            if (estado === "ARRENDADO" || estado === "VENDIDO" ){
+                disponible = false;
+            }
+
+            // Formato de Moneda Seguro
+            let precioFormateado = propiedad.price;
+            try {
+                if(propiedad.tipo_moneda === "UF"){
+                    const formatter = new Intl.NumberFormat('es-CL', {
+                        style: 'currency', currency: "CLP", trailingZeroDisplay: 'stripIfInteger'
+                    });
+                    precioFormateado = formatter.format(propiedad.price).replace("$", "") + " UF";
+                } else {
+                    const currency = propiedad.tipo_moneda || "CLP";
+                    const formatter = new Intl.NumberFormat('es-CL', {
+                        style: 'currency', currency: currency, trailingZeroDisplay: 'stripIfInteger'
+                    });
+                    precioFormateado = formatter.format(propiedad.price);
+                }
+            } catch (e) { console.error("Error formateando precio", e); }
+
+
+            let color = "bg-green-500";
+            let msg = tipoAcuerdo;
+            
+            if (!disponible){
+                color = "bg-red-500";
+                msg = estado;
+            }
+
+            // FIX 3: Manejo de imágenes (Placeholder si no existe)
+            let thumb = "https://via.placeholder.com/300x200?text=Sin+Imagen";
+            if (propiedad.fotos && propiedad.fotos.length > 0 && propiedad.fotos[0]) {
+                thumb = propiedad.fotos[0].replace("./public", "/static");
+            }
+
+            propiedades_item.innerHTML += `
+                <a href="/admin/panel/${propiedad._id}" class="card mx-4 my-2" id="carta_${propiedad._id}">
+                    <div class="card-image-container">
+                        <img src="${thumb}" alt="${propiedad.nombre}">
+                    </div>
+                    <div class="badge ${color}">${msg || 'N/A'}</div>
+                    <div class="card-content">
+                        <div class="title">${propiedad.nombre || 'Sin Nombre'}</div>
+                        <div class="price">${precioFormateado}</div>
+                        <div class="location">
+                            ${propiedad.comuna || ''}, ${propiedad.provincia || ''}, ${propiedad.region || ''}
+                        </div>
+                    </div>
+                </a>    
+            `;
+        });
+    }
+</script>

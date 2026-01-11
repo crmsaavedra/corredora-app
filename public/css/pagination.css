@@ -1,0 +1,46 @@
+.paginationjs .paginationjs-pages li{
+    border: 0;
+    border-right: 0;
+    
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.paginationjs .paginationjs-pages li.active>a{
+    height: 30px;
+    line-height: 30px;
+    background: #6969ff;
+    color: #ffff;
+    border-radius: 9999px;
+}
+
+.paginationjs .paginationjs-pages li>a{
+    min-width: 30px;
+    height: 28px;
+    line-height: 28px;
+    display: block;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 9999px;
+}
+
+.paginationjs .paginationjs-pages li:last-child, .paginationjs .paginationjs-pages li:first-child{
+    border-right: 0;
+    border-radius: 0;
+}
+
+.paginationjs .paginationjs-pages li:last-child>a, .paginationjs .paginationjs-pages li:first-child, .paginationjs .paginationjs-pages li:first-child>a{
+    border-radius: 9999px;
+}
+
+.paginationjs .paginationjs-pages li:last-child a:hover, .paginationjs .paginationjs-pages li:first-child a:hover{
+    background: #f59e0b;
+}
+
+.paginationjs .paginationjs-pages li.disabled>a{
+    opacity: unset;
+    color: #333;
+}

@@ -1,0 +1,93 @@
+<header class="bg-green-600 text-white shadow-md relative z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            
+            <div class="flex items-center space-x-3">
+                <a href="/" class="hover:opacity-90 transition-opacity">
+                    <div class="px-2 py-2 bg-white rounded-xl shadow-sm">
+                        <img src="/static/images/logotipo-def.png" alt="Aburto Propiedades" class="h-10 w-auto">
+                    </div>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="/" class="text-gray-100 hover:text-white hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-house mr-1"></i> Inicio
+                </a>
+                
+                <a href="/#propiedades" class="text-gray-100 hover:text-white hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-building mr-1"></i> Propiedades
+                </a>
+                
+                <a href="#footer" class="text-gray-100 hover:text-white hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-address-book mr-1"></i> Contacto
+                </a>
+
+                <% if (typeof user != 'undefined' && user) { %>
+                    <div class="border-l border-green-400 pl-6 flex space-x-4">
+                        
+                        <% if (user.role === 'ADMIN') { %>
+                            <a href="/admin/panel" class="bg-white text-green-700 px-3 py-1 rounded-md font-bold hover:bg-gray-100 transition-colors">
+                                <i class="fa-solid fa-gauge mr-1"></i> Panel
+                            </a>
+                        <% } %>
+
+                        <a href="/logout" class="text-red-200 hover:text-white" title="Cerrar Sesión">
+                            <i class="fa-solid fa-right-from-bracket"></i> Salir
+                        </a>
+                    </div>
+                <% } else { %>
+                    <% } %>
+            </nav>
+
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white hover:text-gray-200 focus:outline-none p-2" aria-label="Abrir menú">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="mobile-menu" class="hidden md:hidden bg-green-500 border-t border-green-400 text-white">
+    <div class="px-4 pt-2 pb-4 space-y-1">
+        <a href="/" class="mobile-link block py-3 border-b border-green-400 hover:bg-green-600 px-2 rounded">
+            <i class="fa-solid fa-house mr-2 w-6 text-center"></i> Inicio
+        </a>
+        <a href="/#propiedades" class="mobile-link block py-3 border-b border-green-400 hover:bg-green-600 px-2 rounded">
+            <i class="fa-solid fa-building mr-2 w-6 text-center"></i> Propiedades
+        </a>
+        <a href="#footer" class="mobile-link block py-3 border-b border-green-400 hover:bg-green-600 px-2 rounded">
+            <i class="fa-solid fa-address-book mr-2 w-6 text-center"></i> Contacto
+        </a>
+
+        <% if (typeof user != 'undefined' && user) { %>
+            <% if (user.role === 'ADMIN') { %>
+                <a href="/admin/panel" class="mobile-link block py-3 border-b border-green-400 bg-green-700 hover:bg-green-800 px-2 rounded font-bold">
+                    <i class="fa-solid fa-gauge mr-2 w-6 text-center"></i> Panel Admin
+                </a>
+            <% } %>
+            <a href="/logout" class="mobile-link block py-3 text-red-200 hover:bg-red-500 hover:text-white px-2 rounded">
+                <i class="fa-solid fa-right-from-bracket mr-2 w-6 text-center"></i> Cerrar Sesión
+            </a>
+        <% } %>
+    </div>
+</div>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    // Abrir/Cerrar menú
+    menuToggle.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // 4. CORRECCIÓN UX: Cerrar el menú automáticamente al hacer clic en un enlace
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>

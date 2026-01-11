@@ -1,0 +1,404 @@
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
+<link src='https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css' >
+<link href="https://releases.transloadit.com/uppy/v2.6.0/uppy.min.css" rel="stylesheet"/>
+
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+
+<div class="min-w-screen min-h-screen bg-white flex items-center justify-center px-5 py-5">
+    <div class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style="max-width:1000px">
+        <div class="md:flex w-full">
+            <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
+                <div class="text-center mb-10"> 
+                    <h1 class="font-bold text-3xl text-gray-900">Registrar propiedad</h1>
+                </div>
+                <form id="formulario">
+                    <div class="flex -mx-3">
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Nombre de la propiedad</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input required name="nombre" id="nombre" type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="Casa Lomas de San Andrés">
+                            </div>
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Descripcion</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input required name="descripcion" id="descripcion" type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="Esta amplia propiedad posee...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex -mx-3">
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Tipo de Propiedad</label>
+                            <select aria-required="true" id="tipo" name="tipo" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                                <option value="" disabled selected>Seleccionar</option>
+                                <option value="CASA">Casa</option>
+                                <option value="PARCELA">Parcela</option>
+                                <option value="DEPARTAMENTO">DEPARTAMENTO</option>
+                                <option value="BODEGA">Bodega</option>
+                                <option value="CASA_COMERCIAL">Casa Comercial</option>
+                            </select>
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Telefono</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><span class="fi fi-cl"></span></div>
+                                <input required name="contacto" id="contacto" type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="987654321">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex -mx-3">
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Tipo de acuerdo</label>
+                            <select aria-required="true" id="tipo_acuerdo" name="tipo_acuerdo" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                                <option value="" disabled selected>Seleccionar</option>
+                                <option value="VENTA">Venta</option>
+                                <option value="ARRIENDO">Arriendo</option>
+                            </select>
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">¿Está aún disponible?</label>
+                            <select aria-required="true" id="estado" name="estado" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                                <option value="" disabled selected>Seleccionar</option>
+                                <option value="DISPONIBLE">Disponible</option>
+                                <option value="VENDIDO">Vendido</option>
+                                <option value="ARRENDADO">Arrendado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex -mx-3">
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Número de baños</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input required name="baños" id="baños" type="number" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Número de habitaciones</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input required name="habitaciones" id="habitaciones" type="number" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex -mx-3">
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">¿Qué moneda?</label>
+                            <select aria-required="true" id="tipo_moneda" name="tipo_moneda" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                                <option value="" disabled selected>Seleccionar</option>
+                                <option value="CLP">CLP</option>
+                                <option value="UF">UF</option>
+                                <option value="USD">USD</option>
+                            </select>
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Precio</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input required name="price" id="price" type="number" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="100000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex -mx-3">
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">País</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input disabled type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="Chile">
+                            </div>
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Región</label>
+                            <select aria-required="true" id="region" name="region" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                                <option value="" disabled selected>Seleccionar</option>
+                                <option value="1">XV: ARICA Y PARINACOTA</option>
+                                <option value="2">I: TARAPACÁ</option>
+                                <option value="3">II: ANTOFAGASTA</option>
+                                <option value="4">III: ATACAMA</option>
+                                <option value="5">IV: COQUIMBO</option>
+                                <option value="6">V: VALPARAÍSO</option>
+                                <option value="7">RM: METROPOLITANA DE SANTIAGO</option>
+                                <option value="8">VI: LIBERTADOR GENERAL BERNARDO O'HIGGINS</option>
+                                <option value="9">VII: MAULE</option>
+                                <option value="10">XVI: ÑUBLE</option>
+                                <option value="11">VIII: BIOBÍO</option>
+                                <option value="12">IX: ARAUCANÍA</option>
+                                <option value="13">XIV: LOS RÍOS</option>
+                                <option value="14">X: LOS LAGOS</option>
+                                <option value="15">XI: AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO</option>
+                                <option value="16">XII: MAGALLANES</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="flex -mx-3">
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Provincia</label>
+                            <select aria-required="true" id="provincia" name="provincia" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                                <option value="" disabled selected>Seleccionar</option>
+                            </select>
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Comuna</label>
+                            <select aria-required="true" id="comuna" name="comuna" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out">
+                                <option value="" disabled selected>Seleccionar</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex -mx-3">
+                        <div class="w-full px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Dirección</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input required name="lugar" id="lugar" type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="Tucapel 219">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex -mx-3">
+                        <div class="w-full px-3 mb-12">
+                            <label for="" class="text-xs font-semibold px-1">Sube las imágenes de la propiedad</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
+                                <div id="drag-drop-area" class="w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex -mx-3">
+                        <div class="w-full px-3 mb-5">
+                            <button id="boton-crear" type="submit" class="block w-full max-w-xs mx-auto bg-green-500 hover:bg-green-700 focus:bg-green-700 text-white rounded-lg px-3 py-3 font-semibold">Registrar 😊</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/currency.js@2.0.3/dist/currency.min.js"></script>
+<script src="https://unpkg.com/js-datepicker"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" crossorigin="anonymous"></script>
+
+<script src="https://releases.transloadit.com/uppy/v2.6.0/uppy.min.js"></script>
+<script src="https://releases.transloadit.com/uppy/locales/v2.0.6/ru_RU.min.js"></script>
+
+<script>
+    // FIX 1: Inicialización segura de la variable EJS para evitar crash si es undefined
+    const divisionPoliticaTerritoriaChile = <%- JSON.stringify(typeof divisionTerritorial !== 'undefined' ? divisionTerritorial : { regiones: [] }); %>
+
+    const phoneInput = document.getElementById('contacto');
+    
+    if (phoneInput) {
+        phoneInput.addEventListener('keypress', function(e) {
+            const keyCode = e.which ? e.which : e.keyCode;
+            const ret = ((keyCode >= 48 && keyCode <= 57));
+            if (!ret) e.preventDefault();
+        });
+    }
+
+    const region = document.getElementById('region');
+    const provincia = document.getElementById('provincia');
+    const comuna = document.getElementById('comuna');
+
+    if (region && divisionPoliticaTerritoriaChile.regiones.length > 0) {
+        region.addEventListener('change', function(e) {
+            const val = Number(e.target.value);
+            if (isNaN(val) || val < 1) return; // Evitar crash con opción "Seleccionar"
+
+            const index = val - 1;
+            // FIX 2: Optional Chaining para evitar crash si el índice no existe
+            const regionData = divisionPoliticaTerritoriaChile.regiones[index]?.region;
+            
+            if (!regionData) return;
+
+            const provincias = regionData.provincias;
+
+            provincia.innerHTML = '<option value="" disabled selected>Seleccionar</option>';
+            comuna.innerHTML = '<option value="" disabled selected>Seleccionar</option>';
+            
+            provincias.forEach(p => {
+                const option = document.createElement('option');
+                option.value = p.provincia.nombre;
+                option.innerHTML = p.provincia.nombre;
+                provincia.appendChild(option);
+            });
+        });
+
+        provincia.addEventListener('change', function(e) {
+            const valRegion = Number(region.value);
+            if (isNaN(valRegion)) return;
+
+            const indexRegion = valRegion - 1;
+            const regionData = divisionPoliticaTerritoriaChile.regiones[indexRegion]?.region;
+
+            if(!regionData) return;
+
+            const p = regionData.provincias.find((p) => p.provincia.nombre === e.target.value);
+            
+            comuna.innerHTML = '<option value="" disabled selected>Seleccionar</option>';
+
+            if (p && p.provincia && p.provincia.comunas) {
+                p.provincia.comunas.forEach(c => {
+                    const option = document.createElement('option');
+                    option.value = c.comuna.nombre;
+                    option.innerHTML = c.comuna.nombre;
+                    comuna.appendChild(option);
+                });
+            }
+        });
+    }
+</script>
+
+<script>
+    let foto_base = [];
+
+    function getFileExtension(filename) {
+        return /[.]/.exec(filename) ? /[^.]+$/.exec(filename)[0] : undefined;
+    }
+    
+    // Función envuelta en promesa para poder usar await
+    function base64(file, ext) {
+        return new Promise((resolve, reject) => {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+                const fileBase64 = reader.result;
+                resolve({ "ext": ext, "file": fileBase64 });
+            };
+            reader.onerror = function (error) {
+                reject(error);
+            };
+        });
+    }
+
+    let boton_crear = document.getElementById("boton-crear");
+
+    boton_crear.addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        // FIX 3: Sanitización de inputs numéricos. Si es vacio, enviamos null o 0
+        const bañosVal = document.getElementById("baños").value;
+        const habVal = document.getElementById("habitaciones").value;
+        const precioVal = document.getElementById("price").value;
+
+        const bodyData = {
+            "nombre": document.getElementById("nombre").value || "",
+            "descripcion": document.getElementById("descripcion").value || "",
+            "tipo":  document.getElementById("tipo").value,
+            
+            "detalles":{
+                "baños": bañosVal ? parseInt(bañosVal) : 0,
+                "habitaciones": habVal ? parseInt(habVal) : 0,
+                "tipo_acuerdo": document.getElementById("tipo_acuerdo").value,
+                "estado": document.getElementById("estado").value
+            },
+
+            "contacto": document.getElementById("contacto").value,
+
+            "fotos": foto_base, // Aquí ya deberían estar cargadas las fotos
+
+            "tipo_moneda": document.getElementById("tipo_moneda").value,
+            "price": precioVal ? parseInt(precioVal) : 0,
+            
+            "lugar": document.getElementById("lugar").value,
+
+            "comuna":document.getElementById("comuna").value,
+            "provincia":document.getElementById("provincia").value,
+            "region":document.getElementById("region").value,
+        };
+
+        // Validación básica
+        if (!bodyData.nombre || !bodyData.tipo || !bodyData.price) {
+            alertify.error("Por favor completa los campos obligatorios");
+            return;
+        }
+
+        console.log("Enviando:", bodyData);
+        
+        try {
+            const response = await fetch('/admin/crear-propiedad', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(bodyData),
+            });
+
+            if (response.ok) {
+                alertify.success(`
+                    <div class="font-bold">
+                        <i class="fas fa-check-circle"></i> Propiedad creada con éxito
+                    </div>
+                `);
+                // location.reload(); // Descomentar si se desea recargar
+            } else {
+                 alertify.error("Error al crear la propiedad. Verifica los datos.");
+            }
+
+        } catch (error) {
+            console.error(error);
+            alertify.error("Error de conexión con el servidor.");
+        }
+    });
+
+    // Configuración Uppy
+    const uppy = new Uppy.Core({
+        autoProceed: false,
+        restrictions: {
+            maxFileSize: 5000000, // Limite de 5MB por archivo para no matar al servidor
+            maxNumberOfFiles: 10,
+            allowedFileTypes: ['image/*']
+        }
+    })
+    .use(Uppy.Dashboard, {
+        inline: true,
+        target: '#drag-drop-area',
+        showProgressDetails: true,
+        height: 300
+    })
+    // .use(Uppy.XHRUpload, { endpoint: '/admin/return-files' }) // CONFLICTO: Si usas Base64 manual, no necesitas XHRUpload automático.
+
+    // FIX 4: Manejo correcto de async/await en loops
+    uppy.on('complete', async (result) => {
+        
+        // Usamos for...of para asegurar que el await funcione secuencialmente
+        for (const file of result.successful) {
+            try {
+                // file.data es el Blob
+                const b64 = await base64(file.data, getFileExtension(file.name));
+                foto_base.push(b64);
+                
+                // Opcional: Remover archivo de la UI para indicar que se procesó
+                // uppy.removeFile(file.id); 
+            } catch (err) {
+                console.error("Error procesando imagen", err);
+            }
+        }
+
+        alertify.message(`
+            <div class="flex flex-col custom-button-shadow rounded-lg py-3" style="top:0; background: rgb(92, 186, 79);" >
+                <div class="flex flex-col" style="color: white;">
+                    <div class="flex flex-col px-3 items-left font-bold">
+                        <h1><i class="fas fa-check-circle"></i>&nbsp;Listo</h1>
+                        <h1> ${foto_base.length} imágenes procesadas para enviar.</h1>
+                    </div>
+                </div>
+            </div>
+        `);
+    });
+</script>

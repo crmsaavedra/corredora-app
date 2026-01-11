@@ -1,0 +1,501 @@
+<link rel="stylesheet" href="/static/css/landing.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+
+
+<style>
+    .container { max-width: 1000px; width: 100%; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+    .container_2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; max-width: 1000px; width: 100%; padding: 20px; }
+    .property-header { font-size: 20px; font-weight: bold; margin-bottom: 20px; }
+    .property-info { display: flex; flex-wrap: wrap; gap: 20px; }
+    .property-info img { max-width: 100%; border-radius: 5px; cursor: pointer; }
+    .badge { display: inline-block; color: white; padding: 5px 10px; font-weight: bold; border-radius: 5px; }
+    .price { font-size: 32px; font-weight: bold; color: #000; margin: 10px 0; }
+    .details { list-style: none; padding: 0; }
+    .details li { display: flex; align-items: center; font-size: 16px; margin-bottom: 10px; }
+    .gallery { display: flex; gap: 10px; margin-top: 20px; overflow-x: auto; padding-bottom: 10px; }
+    .gallery img { width: 150px; height: 100px; object-fit: cover; border-radius: 5px; cursor: pointer; }
+    .gallery img:hover { transform: scale(1.1); transition: 0.3s; }
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; }
+    .modal img { max-width: 90%; max-height: 90%; border-radius: 5px; }
+    .close, .prev, .next { position: absolute; font-size: 30px; color: white; cursor: pointer; top: 50%; transform: translateY(-50%); }
+    .close { top: 20px; right: 30px; }
+    .prev { left: 20px; }
+    .next { right: 20px; }
+    @media (max-width: 768px) { .property-info { flex-direction: column; } }
+    .container-plus{ display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f5f5f5; flex-direction: column; }
+    .card { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); position: relative; background-color: white; }
+    .card_2 { border-radius: 10px; overflow: hidden; position: relative; background-color: white; }
+    .card img { width: 300px; height: auto; }
+    .badge { position: absolute; top: 10px; left: 10px; color: white; padding: 5px 10px; font-weight: bold; border-radius: 5px; }
+    .card-content { padding: 15px; }
+    .title { font-size: 16px; font-weight: bold; margin-bottom: 10px; }
+    .price { font-size: 24px; font-weight: bold; color: #000; margin-bottom: 10px; }
+    .location { display: flex; align-items: center; color: #555; font-size: 14px; }
+    .location::before { content: '\1F4CD'; margin-right: 5px; }
+</style>
+
+<% 
+    let mainImage = "https://via.placeholder.com/800x400?text=Sin+Imagen";
+    if (propiedad && propiedad.fotos && propiedad.fotos.length > 0 && propiedad.fotos[0]) {
+        mainImage = propiedad.fotos[0].replace("./public", "/static");
+    }
+%>
+
+<div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-6">
+    <div class="card_2 mx-4 my-2">
+        <img src="<%= mainImage %>" class="w-full h-64 object-cover" alt="Foto de la propiedad" onclick="openModal(0)">
+        <div class="badge" id="banner"></div>
+    </div>
+
+    <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-800"><%= propiedad.nombre || 'Sin Nombre' %></h2>
+        <p class="mt-2 text-3xl font-semibold text-green-600" id="price_html"></p>
+    </div>
+
+    <form id="formulario" class="mx-4">
+        <div class="flex -mx-3">
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Nombre de la propiedad</label>
+                <div class="flex">
+                    <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                    <input required value="<%= propiedad.nombre || '' %>" name="nombre" id="nombre" type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" >
+                </div>
+            </div>
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Descripcion</label>
+                <div class="flex">
+                    <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                    <input required value="<%= propiedad.descripcion || '' %>" name="descripcion" id="descripcion" type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="Esta amplia propiedad posee...">
+                </div>
+            </div>
+        </div>
+
+        <div class="flex -mx-3">
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Tipo de Propiedad</label>
+                <select aria-required="true" id="tipo" name="tipo" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                        <option value="" disabled>Seleccionar</option>
+                        <option value="CASA" <%= propiedad.tipo === 'CASA' ? 'selected' : '' %>>Casa</option>
+                        <option value="PARCELA" <%= propiedad.tipo === 'PARCELA' ? 'selected' : '' %>>Parcela</option>
+                        <option value="DEPARTAMENTO" <%= propiedad.tipo === 'DEPARTAMENTO' ? 'selected' : '' %>>DEPARTAMENTO</option>
+                        <option value="BODEGA" <%= propiedad.tipo === 'BODEGA' ? 'selected' : '' %>>Bodega</option>
+                        <option value="CASA_COMERCIAL" <%= propiedad.tipo === 'CASA_COMERCIAL' ? 'selected' : '' %>>Casa Comercial</option>
+                </select>
+            </div>
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Telefono</label>
+                <div class="flex">
+                    <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><span class="fi fi-cl"></span></div>
+                    <input required value="<%= propiedad.contacto || '' %>" name="contacto" id="contacto" type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="987654321">
+                </div>
+            </div>
+        </div>
+
+        <div class="flex -mx-3">
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Tipo de acuerdo</label>
+                <select aria-required="true" id="tipo_acuerdo" name="tipo_acuerdo" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                        <option value="" disabled>Seleccionar</option>
+                        <option value="VENTA" <%= propiedad.detalles && propiedad.detalles.tipo_acuerdo === 'VENTA' ? 'selected' : '' %>>Venta</option>
+                        <option value="ARRIENDO" <%= propiedad.detalles && propiedad.detalles.tipo_acuerdo === 'ARRIENDO' ? 'selected' : '' %>>Arriendo</option>
+                </select>
+            </div>
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">¿Está aún disponible?</label>
+                <select aria-required="true" id="estado" name="estado" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                        <option value="" disabled>Seleccionar</option>
+                        <option value="DISPONIBLE" <%= propiedad.detalles && propiedad.detalles.estado === 'DISPONIBLE' ? 'selected' : '' %>>Disponible</option>
+                        <option value="VENDIDO" <%= propiedad.detalles && propiedad.detalles.estado === 'VENDIDO' ? 'selected' : '' %>>Vendido</option>
+                        <option value="ARRENDADO" <%= propiedad.detalles && propiedad.detalles.estado === 'ARRENDADO' ? 'selected' : '' %>>Arrendado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex -mx-3">
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Número de baños</label>
+                <div class="flex">
+                    <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                    <input required value="<%= propiedad.detalles ? propiedad.detalles.baños : '' %>" name="baños" id="baños" type="number" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="1">
+                </div>
+            </div>
+
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Número de habitaciones</label>
+                <div class="flex">
+                    <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                    <input required value="<%= propiedad.detalles ? propiedad.detalles.habitaciones : '' %>" name="habitaciones" id="habitaciones" type="number" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="2">
+                </div>
+            </div>
+        </div>
+
+        <div class="flex -mx-3">
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">¿Qué moneda?</label>
+                <select aria-required="true" id="tipo_moneda" name="tipo_moneda" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                        <option value="" disabled>Seleccionar</option>
+                        <option value="CLP" <%= propiedad.tipo_moneda === 'CLP' ? 'selected' : '' %>>CLP</option>
+                        <option value="UF" <%= propiedad.tipo_moneda === 'UF' ? 'selected' : '' %>>UF</option>
+                        <option value="USD" <%= propiedad.tipo_moneda === 'USD' ? 'selected' : '' %>>USD</option>
+                </select>
+            </div>
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Precio</label>
+                <div class="flex">
+                    <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                    <input required name="price" id="price" value="<%= propiedad.price || 0 %>" type="number" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="flex -mx-3">
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">País</label>
+                <div class="flex">
+                    <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                    <input disabled type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="Chile">
+                </div>
+            </div>
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Región</label>
+                <select aria-required="true" id="region" name="region" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option value="1">XV: ARICA Y PARINACOTA</option>
+                        <option value="2">I: TARAPACÁ</option>
+                        <option value="3">II: ANTOFAGASTA</option>
+                        <option value="4">III: ATACAMA</option>
+                        <option value="5">IV: COQUIMBO</option>
+                        <option value="6">V: VALPARAÍSO</option>
+                        <option value="7">RM: METROPOLITANA DE SANTIAGO</option>
+                        <option value="8">VI: LIBERTADOR GENERAL BERNARDO O'HIGGINS</option>
+                        <option value="9">VII: MAULE</option>
+                        <option value="10">XVI: ÑUBLE</option>
+                        <option value="11">VIII: BIOBÍO</option>
+                        <option value="12">IX: ARAUCANÍA</option>
+                        <option value="13">XIV: LOS RÍOS</option>
+                        <option value="14">X: LOS LAGOS</option>
+                        <option value="15">XI: AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO</option>
+                        <option value="16">XII: MAGALLANES</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="flex -mx-3">
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Provincia</label>
+                <select aria-required="true" id="provincia" name="provincia" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out" required>
+                    <option value="" disabled selected>Seleccionar</option>
+                </select>
+            </div>
+            <div class="w-1/2 px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Comuna</label>
+                <select aria-required="true" id="comuna" name="comuna" class="block rounded-lg border border-grey-dark w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring focus:ring-green-500 transition duration-300 ease-in-out">
+                    <option value="" disabled selected>Seleccionar</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex -mx-3">
+            <div class="w-full px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1">Dirección</label>
+                <div class="flex">
+                    <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                    <input required value="<%= propiedad.lugar || '' %>" name="lugar" id="lugar" type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-green-500" placeholder="Tucapel 219">
+                </div>
+            </div>
+        </div>
+
+        <div class="flex -mx-3">
+            <div class="w-full px-3 mb-5">
+                <button id ="boton-crear" class="block w-full max-w-xs mx-auto bg-green-500 hover:bg-green-700 focus:bg-green-700 text-white rounded-lg px-3 py-3 font-semibold">Guardar 😊</button>
+            </div>
+        </div>
+    </form>
+
+
+    <button id ="boton-eliminar" class="block w-full max-w-xs mx-auto bg-red-500 hover:bg-red-700 focus:bg-red-700 text-white rounded-lg px-3 py-3 font-semibold">Eliminar propiedad</button>
+
+
+    <div class="p-6">
+        <h3 class="text-xl font-bold mb-4"><i class="fa-solid fa-image mr-2"></i>Galería de imágenes</h3>
+        <div class="grid grid-cols-3 gap-4" id="galeria_fotos"></div>
+    </div>
+</div>
+
+<div class="modal" id="imageModal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="prev" onclick="prevImage()">&#10094;</span>
+    <img id="modalImg">
+    <span class="next" onclick="nextImage()">&#10095;</span>
+</div>
+
+<script>
+    // Inicialización de Variables Globales (Protegidas)
+    const divisionPoliticaTerritoriaChile = <%- JSON.stringify(typeof divisionTerritorial !== 'undefined' ? divisionTerritorial : { regiones: [] }); %>;
+    // Creamos una copia de propiedad para uso en cliente
+    let propiedad = <%- JSON.stringify(typeof propiedad !== 'undefined' ? propiedad : {}) %>;
+    
+    // Referencias DOM
+    const regionSelect = document.getElementById('region');
+    const provinciaSelect = document.getElementById('provincia');
+    const comunaSelect = document.getElementById('comuna');
+    const galeria = document.getElementById("galeria_fotos");
+    const banner = document.getElementById("banner");
+    const priceHtml = document.getElementById("price_html");
+
+    // Lógica de carga de Regiones/Comunas
+    regionSelect.addEventListener('change', function(e) {
+        const val = Number(e.target.value);
+        if(!val || isNaN(val)) return;
+
+        const index = val - 1;
+        const regionData = divisionPoliticaTerritoriaChile.regiones[index]?.region; // Optional chaining
+        
+        provinciaSelect.innerHTML = '<option value="" disabled selected>Seleccionar</option>';
+        comunaSelect.innerHTML = '<option value="" disabled selected>Seleccionar</option>';
+
+        if(regionData && regionData.provincias){
+            regionData.provincias.forEach(p => {
+                const option = document.createElement('option');
+                option.value = p.provincia.nombre;
+                option.innerHTML = p.provincia.nombre;
+                provinciaSelect.appendChild(option);
+            });
+        }
+    });
+
+    provinciaSelect.addEventListener('change', function(e) {
+        const valRegion = Number(regionSelect.value);
+        if(!valRegion || isNaN(valRegion)) return;
+
+        const indexRegion = valRegion - 1;
+        const regionData = divisionPoliticaTerritoriaChile.regiones[indexRegion]?.region;
+
+        if(!regionData) return;
+
+        const p = regionData.provincias.find( (p) => p.provincia.nombre === e.target.value );
+
+        comunaSelect.innerHTML = '<option value="" disabled selected>Seleccionar</option>';
+
+        if(p && p.provincia && p.provincia.comunas){
+            p.provincia.comunas.forEach(c => {
+                const option = document.createElement('option');
+                option.value = c.comuna.nombre;
+                option.innerHTML = c.comuna.nombre;
+                comunaSelect.appendChild(option);
+            });
+        }
+    });
+
+    // Lógica de Pre-llenado de datos (Load)
+    document.addEventListener("DOMContentLoaded", () => {
+        // Pre-seleccionar Región, Provincia y Comuna si existen
+        if(propiedad.region_numero && divisionPoliticaTerritoriaChile.regiones.length > 0){
+            // Setear Región
+            regionSelect.value = propiedad.region_numero;
+            
+            const index = Number(propiedad.region_numero) - 1;
+            const regionData = divisionPoliticaTerritoriaChile.regiones[index]?.region;
+
+            if(regionData){
+                // Llenar Provincias
+                regionData.provincias.forEach(p => {
+                    const option = document.createElement('option');
+                    option.value = p.provincia.nombre;
+                    option.innerHTML = p.provincia.nombre;
+                    provinciaSelect.appendChild(option);
+                });
+
+                // Setear Provincia seleccionada
+                provinciaSelect.value = propiedad.provincia;
+
+                // Buscar datos de provincia para llenar comunas
+                const provinciaData = regionData.provincias.find(p => p.provincia.nombre === propiedad.provincia);
+                
+                if(provinciaData && provinciaData.provincia.comunas){
+                    provinciaData.provincia.comunas.forEach(c => {
+                        const option = document.createElement('option');
+                        option.value = c.comuna.nombre;
+                        option.innerHTML = c.comuna.nombre;
+                        comunaSelect.appendChild(option);
+                    });
+                    // Setear Comuna seleccionada
+                    comunaSelect.value = propiedad.comuna;
+                }
+            }
+        }
+
+        // Formato de Precio
+        let precioFormateado = propiedad.price;
+        try {
+            if(propiedad.tipo_moneda == "UF"){
+                const formatter = new Intl.NumberFormat('es-CL', {
+                    style: 'currency', currency: "CLP", trailingZeroDisplay: 'stripIfInteger'
+                });
+                precioFormateado = formatter.format(propiedad.price).replace("$", "") + " UF";
+            } else {
+                const currency = propiedad.tipo_moneda || 'CLP';
+                const formatter = new Intl.NumberFormat('es-CL', {
+                    style: 'currency', currency: currency, trailingZeroDisplay: 'stripIfInteger'
+                });
+                precioFormateado = formatter.format(propiedad.price);
+            }
+        } catch (e) { console.error("Error formato precio", e); }
+        
+        priceHtml.innerHTML = precioFormateado;
+
+        // Galería de Imágenes
+        if(propiedad.fotos && Array.isArray(propiedad.fotos)){
+            propiedad.fotos.forEach((foto, i) => {
+                let link = foto.replace("./public", "/static");
+                // Guardamos el link procesado en el array global images para el modal
+                images.push(link); 
+                
+                galeria.innerHTML += `
+                    <img src="${link}" alt="Foto ${i}" class="w-full h-32 object-cover cursor-pointer hover:opacity-80 transition" onclick="openModal(${i})">
+                `;
+            });
+        }
+
+        // Estado y Banner
+        const detalles = propiedad.detalles || {};
+        let disponible = true;
+        if (detalles.estado == "ARRENDADO" || detalles.estado == "VENDIDO" ){
+            disponible = false;
+        }
+
+        let color = "bg-green-500";
+        let msg = detalles.tipo_acuerdo || "N/A";
+
+        if (!disponible){
+            color = "bg-red-500";
+            msg = detalles.estado || "No disponible";
+        }
+
+        banner.className = `badge ${color}`;
+        banner.innerHTML = msg;
+    });
+
+    // Lógica del Modal
+    let images = [];
+    let currentIndex = 0;
+
+    function openModal(index) {
+        if(images.length === 0) return;
+        currentIndex = index;
+        document.getElementById('modalImg').src = images[currentIndex];
+        document.getElementById('imageModal').style.display = 'flex';
+    }
+    
+    function closeModal() {
+        document.getElementById('imageModal').style.display = 'none';
+    }
+
+    function prevImage() {
+        if(images.length === 0) return;
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        document.getElementById('modalImg').src = images[currentIndex];
+    }
+
+    function nextImage() {
+        if(images.length === 0) return;
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        document.getElementById('modalImg').src = images[currentIndex];
+    }
+
+    // Botones de Acción (Guardar / Eliminar)
+    
+    document.getElementById("boton-crear").addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        // Conversión segura a número para evitar errores en backend
+        const priceVal = Number(document.getElementById("price").value) || 0;
+        const banosVal = Number(document.getElementById("baños").value) || 0;
+        const habVal = Number(document.getElementById("habitaciones").value) || 0;
+
+        const body = JSON.stringify({
+            "_id": propiedad._id,
+            "nombre": document.getElementById("nombre").value,
+            "descripcion": document.getElementById("descripcion").value,
+            
+            "tipo":  document.getElementById("tipo").value,
+            
+            "detalles":{
+                "baños": banosVal,
+                "habitaciones": habVal,
+                "tipo_acuerdo": document.getElementById("tipo_acuerdo").value,
+                "estado": document.getElementById("estado").value
+            },
+
+            "contacto": document.getElementById("contacto").value,
+
+            "tipo_moneda": document.getElementById("tipo_moneda").value,
+            "price": priceVal,
+            
+            "lugar": document.getElementById("lugar").value,
+
+            "comuna": document.getElementById("comuna").value,
+            "provincia": document.getElementById("provincia").value,
+            "region": document.getElementById("region").value,
+        });
+
+        try {
+            const res = await fetch(`/admin/panel/${propiedad._id}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: body,
+            });
+
+            if(res.ok){
+                const msg_success = alertify.message(`
+                    <div class="flex flex-col custom-button-shadow rounded-lg py-3" style="top:0; background: rgb(92, 186, 79);" >
+                        <div class="flex flex-col" style="color: white;">
+                            <div class="flex flex-col px-3 items-left font-bold">
+                                <h1><i class="fas fa-check-circle"></i>&nbsp;Éxito</h1>
+                                <h1> Propiedad actualizada </h1>
+                            </div>
+                        </div>
+                    </div>
+                `);
+                msg_success.delay(2);
+                setTimeout(() => location.reload(), 1000);
+            } else {
+                alertify.error("Error al actualizar");
+            }
+        } catch(err) {
+            console.error(err);
+            alertify.error("Error de conexión");
+        }
+    });
+
+    document.getElementById('boton-eliminar').addEventListener('click', async (e) => {
+        e.preventDefault();
+        
+        if(!confirm("¿Estás seguro de que quieres eliminar esta propiedad?")) return;
+
+        const body = JSON.stringify({ "_id": propiedad._id });
+
+        try {
+            const res = await fetch(`/admin/panel/${propiedad._id}/eliminar`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: body,
+            });
+
+            if(res.ok){
+                alertify.success("Propiedad eliminada");
+                setTimeout(() => window.location.href = window.location.origin + "/admin/panel", 1000);
+            } else {
+                alertify.error("No se pudo eliminar");
+            }
+        } catch(err) {
+            console.error(err);
+            alertify.error("Error de conexión");
+        }
+    });
+</script>
