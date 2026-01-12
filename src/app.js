@@ -11,6 +11,7 @@ const expressLayout = require('express-ejs-layouts');
 
 // Inicializar App
 const app = express();
+app.enable('trust proxy');
 
 // --- 1. CONFIGURACIÓN DE BASE DE DATOS (Sin Globals) ---
 const DB_HOST = process.env.MONGO_HOST || 'localhost';
