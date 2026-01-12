@@ -25,7 +25,7 @@ console.log(process.env.MONGO_USER);
 
 if (process.env.MONGO_USER && process.env.MONGO_USER !== '0') {
     // Modo Producción / Atlas
-    MONGO_URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority&appName=ImpulsaCiencia`;
+    MONGO_URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&appName=ImpulsaCiencia`;
 } 
 else {
 

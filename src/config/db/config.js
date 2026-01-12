@@ -7,11 +7,11 @@ const DB_PASSWORD = process.env.MONGO_PASSWORD;
 const DB_PORT = process.env.MONGO_PORT || 27017;
 
 let MONGO_URI;
-const MONGO_QUERY = process.env.MONGO_QUERY || '?retryWrites=true&w=majority';
+const MONGO_QUERY = process.env.MONGO_QUERY || '?retryWrites=true';
 
 if (process.env.MONGO_USER && process.env.MONGO_USER !== '0') {
     // Modo Producción / Atlas
-    MONGO_URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority&appName=ImpulsaCiencia`;
+    MONGO_URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&appName=ImpulsaCiencia`;
 } else {
     // Modo Local
     MONGO_URI = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
