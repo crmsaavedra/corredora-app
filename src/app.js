@@ -14,15 +14,16 @@ const app = express();
 
 // --- 1. CONFIGURACIÓN DE BASE DE DATOS (Sin Globals) ---
 const DB_HOST = process.env.MONGO_HOST || 'localhost';
-const DB_PORT = process.env.MONGO_PORT || '27017';
-const DB_NAME = process.env.MONGO_DB_NAME || 'CorredoraPropiedades';
+const DB_NAME = process.env.MONGO_DB_NAME || 'ImpulsaCiencia';
+const DB_USER = process.env.MONGO_USER;
+const DB_PASSWORD = process.env.MONGO_PASSWORD;
+const DB_PORT = process.env.MONGO_PORT || 27017;
 
 let MONGO_URI;
 
 if (process.env.MONGO_USER && process.env.MONGO_USER !== '0') {
     // Modo Producción / Atlas
-    MONGO_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`;
-} else {
+    MONGO_URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority&appName=ImpulsaCiencia`;} else {
     // Modo Local
     MONGO_URI = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 }
