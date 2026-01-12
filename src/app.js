@@ -21,9 +21,14 @@ const DB_PORT = process.env.MONGO_PORT || 27017;
 
 let MONGO_URI;
 
+console.log(process.env.MONGO_USER);
+
 if (process.env.MONGO_USER && process.env.MONGO_USER !== '0') {
     // Modo Producción / Atlas
-    MONGO_URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority&appName=ImpulsaCiencia`;} else {
+    MONGO_URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority&appName=ImpulsaCiencia`;
+} 
+else {
+
     // Modo Local
     MONGO_URI = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 }

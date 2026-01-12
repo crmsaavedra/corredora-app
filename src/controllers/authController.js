@@ -103,7 +103,7 @@ class AuthController {
                 username: username,
                 password: hashedPassword
             });
-
+            
             const savedAdmin = await newAdmin.save();
 
             const newUser = new Users({
